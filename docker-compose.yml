@@ -1,0 +1,23 @@
+version: "3"
+services:
+  web:
+    build: .
+    working_dir: /app
+    command: bash -c "yarn && yarn docker:migrate && yarn dev"
+    environment:
+      - DB_URL=postgres://postgres:postgres@postgres:5432/postgres
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+    volumes:
+      - .:/app
+    links:
+      - "postgres"
+    depends_on:
+      - "postgres"
+  postgres:
+    ports:
+      - "5432:5432"
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres

@@ -1,3 +1,3 @@
-const withCss = require('@zeit/next-css');
+const withCss = require("@zeit/next-css");
 
 module.exports = withCss({});

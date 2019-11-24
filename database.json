@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "database": "postgres",
+    "schema": "public"
+  },
+  "docker": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "postgres",
+    "database": "postgres",
+    "schema": "public"
+  }
+}

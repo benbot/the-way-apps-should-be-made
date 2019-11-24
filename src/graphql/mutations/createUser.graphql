@@ -1,0 +1,7 @@
+mutation CreateUser($username: String!, $pass: String!) {
+  adduser(input: { usrname: $username, pswd: $pass }) {
+    jwt {
+      role
+    }
+  }
+}

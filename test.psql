@@ -1,0 +1,52 @@
+CREATE TABLE ben (
+    id serial PRIMARY KEY,
+    fname text UNIQUE,
+    rolename text
+);
+
+INSERT INTO ben (fname, rolename)
+    VALUES ('benjo', 'public');
+
+INSERT INTO ben (fname, rolename)
+    VALUES ('ben', 'public');
+
+INSERT INTO ben (fname, rolename)
+    VALUES ('benonly', 'ben');
+
+INSERT INTO ben (fname, rolename)
+    VALUES ('benjoonly', 'benjo');
+
+ALTER TABLE ben enable ROW level SECURITY;
+
+CREATE ROLE ben NOSUPERUSER;
+
+CREATE ROLE benjo NOSUPERUSER;
+
+CREATE POLICY gen_pol ON ben FOR SELECT TO public USING (rolename = 'public');
+
+CREATE POLICY ben_pol ON ben FOR SELECT TO ben USING (rolename = 'ben');
+
+GRANT ALL ON ben TO benjo, ben;
+
+SET ROLE ben;
+
+SELECT
+    *
+FROM
+    ben;
+
+SET ROLE benjo;
+
+SELECT
+    *
+FROM
+    ben;
+
+SET ROLE postgres;
+
+DROP TABLE ben;
+
+DROP ROLE ben;
+
+DROP ROLE benjo;
+
