@@ -1,0 +1,46 @@
+Arguments: 
+  /Users/benbot/.nvm/versions/node/v13.2.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add --dev postcss-preset-env typescritp postcss-scss @types/react @types/node
+
+PATH: 
+  /Users/benbot/.nvm/versions/node/v13.2.0/bin:/usr/local/sbin:/Users/benbot/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/benbot/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/benbot/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/benbot/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/fasd:/Users/benbot/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/Users/benbot/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/benbot/.antigen/bundles/zsh-users/zsh-autosuggestions:/Users/benbot/Documents/dev/go/bin:/Applications/Code.app/Contents/Resources/app/bin:/Applications/Code.app/Contents/Resources/app/bin:/Users/benbot/.cargo/bin:/Users/benbot/.rvm/bin:/Users/benbot/.local/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  13.2.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/typescritp: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:66926:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:140564:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141536:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141458:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1200:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "lightbulb",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
