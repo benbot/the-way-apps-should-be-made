@@ -1,7 +1,5 @@
 node_modules
 .next
 .vscode
-graphql/schema.graphql
-graphql/generated.tsx
 yarn-error.log
 mockups

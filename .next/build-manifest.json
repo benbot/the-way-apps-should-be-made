@@ -1,7 +1,7 @@
 {
   "devFiles": [
-    "static/development/dll/dll_4378f3b3e71504461561.js",
-    "static/development/dll/dll_4378f3b3e71504461561.js.map"
+    "static/development/dll/dll_5b0563bdfc01362a831f.js",
+    "static/development/dll/dll_5b0563bdfc01362a831f.js.map"
   ],
   "pages": {
     "/_app": [
@@ -15,12 +15,6 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
-    ],
-    "/sign_up": [
-      "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
-      "static/runtime/main.js"
     ]
   }
 }
