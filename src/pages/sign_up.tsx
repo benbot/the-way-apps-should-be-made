@@ -6,13 +6,17 @@ import "../style.css";
 const LoginPage = () => {
   const [createUser, { data, loading }] = useCreateUserMutation();
 
+  if (!loading) {
+    console.log(data);
+  }
+
   return (
     <div className="w-screen h-screen bg-gray-200 pt-16">
       <Formik
         initialValues={{ username: "", pass: "" }}
         onSubmit={values => createUser({ variables: { ...values } })}
       >
-        {props => (
+        {() => (
           <Form className="flex flex-col w-1/2 xl:w-1/4 m-auto shadow-xl rounded p-6 bg-white">
             <Field name="username">
               {field => (
