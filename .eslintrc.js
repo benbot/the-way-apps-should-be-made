@@ -24,6 +24,8 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "jsx-a11y"],
   rules: {
     "react/prop-types": 0,
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 2
   }
 };

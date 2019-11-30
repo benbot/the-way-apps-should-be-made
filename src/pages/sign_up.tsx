@@ -4,22 +4,29 @@ import { useCreateUserMutation } from "../graphql/generated";
 import "../style.css";
 
 const LoginPage = () => {
-  const [createUser, { data, loading }] = useCreateUserMutation();
+  const [createUser, { loading }] = useCreateUserMutation();
 
-  if (!loading) {
-    console.log(data);
+  if (loading) {
+    return <p>LOADING</p>;
   }
 
   return (
     <div className="w-screen h-screen bg-gray-200 pt-16">
       <Formik
         initialValues={{ username: "", pass: "" }}
-        onSubmit={values => createUser({ variables: { ...values } })}
+        onSubmit={values =>
+          createUser({
+            variables: {
+              username: values.username,
+              pass: values.pass
+            }
+          })
+        }
       >
         {() => (
           <Form className="flex flex-col w-1/2 xl:w-1/4 m-auto shadow-xl rounded p-6 bg-white">
             <Field name="username">
-              {field => (
+              {({ field }) => (
                 <span className="m-auto pt-2 font-thin">
                   <label htmlFor="username" className="font-thin">
                     Username
@@ -32,7 +39,7 @@ const LoginPage = () => {
               )}
             </Field>
             <Field name="pass">
-              {field => (
+              {({ field }) => (
                 <span className="m-auto pt-2 font-thin">
                   <label htmlFor="password">Password</label>
                   <br />

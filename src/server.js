@@ -6,13 +6,18 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+let db = "postgres";
+
+if (process.env.NODE_ENV === "test") {
+  db = "test";
+}
+
 app.prepare().then(() => {
-  console.log(process.env.DB_URL);
   polka()
     .use(
       postgraphile(
         process.env.DB_URL ||
-          "postgres://postgres:postgres@localhost:5432/postgres",
+          `postgres://postgres:postgres@localhost:5432/${db}`,
         "public",
         {
           watchPg: dev,
